@@ -3,7 +3,7 @@
     <Card
       v-for="(episode, index) in episodes"
       :key="episode.id"
-      :index="episodes.length - index"
+      :index="index + 1"
       :title="$prismic.asText(episode.data.title)"
       :url="episode.data.record.url"
       :themeId="episode.data.theme.id"

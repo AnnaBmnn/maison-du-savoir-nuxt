@@ -80,7 +80,8 @@ export default {
 
 .accordeon__item h3 {
   margin: 0;
-  font-size: 7vw;
+  text-align: left;
+  font-size: 5vw;
 }
 .accordeon__item.is-open {
   border-bottom: none;
@@ -109,7 +110,7 @@ export default {
     text-align: left;
   }
   .accordeon__item h3 {
-    font-size: 10vw;
+    font-size: 7vw;
   }
   .accordeon__icon {
     margin: 2.5vw 0px 0.6vw 14px;
