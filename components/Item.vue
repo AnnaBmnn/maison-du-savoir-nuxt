@@ -207,5 +207,8 @@ export default {
   .accordeon__item-container:last-of-type .accordeon__item {
     border-bottom: 3px solid black;
   }
+  .accordeon__txt {
+    width: 90%;
+  }
 }
 </style>
