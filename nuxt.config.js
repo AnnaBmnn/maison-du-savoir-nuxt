@@ -19,6 +19,16 @@ export default {
         content: "https://maison-du-savoir.fr/meta.png",
       },
       {
+        hid: "og:title",
+        property: "og:title",
+        content: "La maison du savoir",
+      },
+      {
+        hid: "og:url",
+        property: "og:url",
+        content: "https://maison-du-savoir.fr/",
+      },
+      {
         hid: "og:description",
         property: "og:description",
         content:
