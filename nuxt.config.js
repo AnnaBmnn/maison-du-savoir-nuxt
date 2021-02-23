@@ -16,7 +16,7 @@ export default {
       {
         hid: "og:image",
         property: "og:image",
-        content: "/meta.png",
+        content: "https://maison-du-savoir.fr/meta.png",
       },
       {
         hid: "og:description",
