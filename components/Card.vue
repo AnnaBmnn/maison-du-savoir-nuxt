@@ -41,7 +41,7 @@ export default {
     },
   },
   computed: {
-    showIndex: function() {
+    showIndex: function () {
       // X8Y6JXIAACKAKZZD
       if (this.themeId === "X8Y6jxIAACkAkzzd") {
         const date = Intl.DateTimeFormat("fr-FR", {
@@ -82,7 +82,7 @@ export default {
 .card__title {
   margin: 16px 0 8vw;
   font-weight: 400;
-  font-size: 2.5vw;
+  font-size: 2vw;
   letter-spacing: 1px;
   width: 95%;
 }
