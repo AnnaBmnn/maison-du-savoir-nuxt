@@ -17,7 +17,7 @@ export default {
 </script>
 <style scoped>
 .txt--big {
-  font-size: 6vw;
+  font-size: 4vw;
   width: 85%;
 }
 @media screen and (max-width: 800px) {

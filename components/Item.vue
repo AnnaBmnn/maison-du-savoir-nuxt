@@ -16,10 +16,33 @@
     </button>
     <div v-show="show && authors.length > 0" class="accordeon__author">
       par
-      <span v-for="author in authors" :key="author.UID">
-        {{ $prismic.asText(authors[0].data.name) }}
+      <span v-for="(author, index) in authors" :key="author.UID">
+        {{ $prismic.asText(author.data.name) }}
+        {{ index !== authors.length - 1 ? "&" : "" }}
       </span>
     </div>
+    <button
+      class="accordeon__btn"
+      @click="showDescriptionFunc"
+      v-show="show && theme.data.summary.length > 0"
+    >
+      <span v-show="!showDescription" class="accordeon__btn-icon accordeon__btn-icon--open">?</span>
+      <span v-show="showDescription">
+        <img
+          src="~/assets/img/cross.svg"
+          alt="toggle accordeon"
+          width="2rem"
+          height="2rem"
+          :class="
+            showDescription
+              ? 'accordeon__btn-icon accordeon__btn-icon--close'
+              : 'accordeon__btn-icon accordeon__btn-icon--open'
+          " /></span
+      >à propos
+    </button>
+    <p class="accordeon__txt" v-show="show && theme.data.summary.length > 0 && showDescription">
+      {{ $prismic.asText(theme.data.summary) }}
+    </p>
     <Cards v-show="show" :episodes="episodes" />
   </li>
 </template>
@@ -42,11 +65,15 @@ export default {
   data() {
     return {
       show: false,
+      showDescription: false,
     };
   },
   methods: {
     showList() {
       this.show = !this.show;
+    },
+    showDescriptionFunc() {
+      this.showDescription = !this.showDescription;
     },
   },
 };
@@ -71,7 +98,28 @@ export default {
 .accordeon__item:hover {
   font-style: italic;
 }
-
+.accordeon__btn {
+  margin: 3.2rem 0 0;
+  text-align: left;
+  text-decoration: underline;
+  font-size: 1.3rem;
+}
+.accordeon__btn-icon--open {
+  /* border-radius: 50%;
+  background-color: black;
+  color: black; */
+}
+.accordeon__btn-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+.accordeon__btn-icon--close {
+  transform: rotate(45deg);
+  margin-right: 0.4rem;
+}
+.accordeon__btn:hover {
+  font-style: italic;
+}
 .accordeon__icon {
   margin: 0.6vw 14px;
   width: 6vw;
@@ -85,6 +133,14 @@ export default {
 }
 .accordeon__item.is-open {
   border-bottom: none;
+}
+
+.accordeon__txt {
+  text-transform: initial;
+  width: 66%;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin: 1.6rem 0px 9vw;
 }
 
 .accordeon__item-container:last-of-type .accordeon__item {

@@ -18,9 +18,12 @@ export default {
       // Here we query blog home content using $prismic which
       // has the api endpoint data from the nuxt.config.js
       const homepage = (await $prismic.api.getSingle("homepage")).data;
-      const themes = await $prismic.api.query($prismic.predicates.at("document.type", "theme"));
+      const themes = await $prismic.api.query($prismic.predicates.at("document.type", "theme"), {
+        orderings: "[my.theme.order]",
+      });
       const episodes = await $prismic.api.query($prismic.predicates.at("document.type", "episod"), {
-        orderings: "[my.episod.published desc]",
+        orderings: "[my.episod.order]",
+        pageSize: 100,
       });
       const authors = await $prismic.api.query($prismic.predicates.at("document.type", "author"));
       // Returns data to be used in template
