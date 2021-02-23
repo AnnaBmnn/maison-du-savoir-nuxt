@@ -7,7 +7,23 @@ export default {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "La maison du savoir" },
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Chaque dimanche après-midi ou presque a lieu dans une maison à Ivry-sur-Seine des interventions et des discussions autour de l'actualité et la philosophie.",
+      },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content: "/meta.png",
+      },
+      {
+        hid: "og:description",
+        property: "og:description",
+        content:
+          "Chaque dimanche après-midi ou presque a lieu dans une maison à Ivry-sur-Seine des interventions et des discussions autour de l'actualité et la philosophie.",
+      },
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
