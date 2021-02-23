@@ -59,7 +59,7 @@ export default {
 </script>
 <style scoped>
 .card {
-  height: 100%;
+  /* height: 100%; */
   position: relative;
   width: calc(30% - 14px);
   max-width: calc(30% - 14px);

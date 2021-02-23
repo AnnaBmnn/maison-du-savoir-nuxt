@@ -82,13 +82,14 @@ export default {
 .accordeon__item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   cursor: pointer;
-  margin-bottom: 0.6vw;
+  margin-bottom: 0vw;
+  /* margin: 2vw 0 2vw; */
   list-style: none;
   font-size: 8vw;
-  border-top: 2px solid #020202;
-  padding: 0;
+  border-top: 5px solid #020202;
+  padding: 0.7vw 0vw 1.3vw 1vw;
 }
 
 .is-open .accordeon__icon {
@@ -112,6 +113,7 @@ export default {
 .accordeon__btn-icon {
   width: 1.1rem;
   height: 1.1rem;
+  padding-left: 1vw;
 }
 .accordeon__btn-icon--close {
   transform: rotate(45deg);
@@ -121,8 +123,8 @@ export default {
   font-style: italic;
 }
 .accordeon__icon {
-  margin: 0.6vw 14px;
-  width: 6vw;
+  margin: 1.15vw 14px 0;
+  width: 4.1vw;
   height: auto;
 }
 
@@ -144,7 +146,7 @@ export default {
 }
 
 .accordeon__item-container:last-of-type .accordeon__item {
-  border-bottom: 2px solid #020202;
+  border-bottom: 5px solid #020202;
 }
 .accordeon__item-container:last-of-type
   .is-open.accordeon__item
@@ -159,9 +161,11 @@ export default {
 .accordeon__author {
   font-size: 1.7vw;
   margin-bottom: 1vw;
+  padding-left: 1vw;
 }
 @media screen and (max-width: 800px) {
   .accordeon__item {
+    border-top: 3px solid black;
     align-items: flex-start;
     text-align: left;
   }
@@ -169,12 +173,16 @@ export default {
     font-size: 7vw;
   }
   .accordeon__icon {
-    margin: 2.5vw 0px 0.6vw 14px;
+    margin: 1vw 0.6vw 14px;
     width: 8vw;
+    height: 7vw;
   }
   .accordeon__author {
     font-size: 5vw;
     margin: 3vw 0;
+  }
+  .accordeon__item-container:last-of-type .accordeon__item {
+    border-bottom: 3px solid black;
   }
 }
 </style>

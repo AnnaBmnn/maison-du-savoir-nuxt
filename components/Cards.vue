@@ -26,8 +26,8 @@ export default {
   position: relative;
   width: calc(100% + 32px);
   transform: translateX(-16px);
-  padding: 3vw 14px calc(11vw - 20px);
-  min-height: 70vh;
+  padding: 3vw 14px calc(15vw) calc(1vw + 14px);
+  min-height: 49vh;
   display: flex;
   box-sizing: border-box;
   flex-wrap: nowrap;

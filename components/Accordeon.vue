@@ -4,7 +4,21 @@
       v-for="theme in themes"
       :key="theme.UID"
       :theme="theme"
-      :episodes="episodes.filter((episode) => episode.data.theme.id === theme.id)"
+      :episodes="
+        episodes
+          .filter((episode) => episode.data.theme.id === theme.id)
+          .sort((a, b) => {
+            const orderA = a.data.order;
+            const orderB = b.data.order;
+            let comparison = 0;
+            if (orderA > orderB) {
+              comparison = 1;
+            } else if (orderA < orderB) {
+              comparison = -1;
+            }
+            return comparison;
+          })
+      "
       :authors="
         authors.filter((author) => {
           let isAuthor = false;
@@ -36,16 +50,19 @@ export default {
     },
   },
   computed: {},
-  method: {},
-  mounted() {
-    // console.log(this.themes[5].data.authors[0].author);
-    // console.log(this.themes[0].data.authors);
-    // console.log(
-    //   this.themes[0].data.authors.filter((themeAuthor) =>
-    //     this.authors.filter((author) => themeAuthor.author.id === author.id)
-    //   )
-    // );
+  method: {
+    compareOrder(a, b) {
+      const orderA = a.data.order;
+      const orderB = b.data.order;
+      if (orderA > orderB) {
+        comparison = 1;
+      } else if (orderA < orderB) {
+        comparison = -1;
+      }
+      return comparison;
+    },
   },
+  mounted() {},
   methods: {},
 };
 </script>
