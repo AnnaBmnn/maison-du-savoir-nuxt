@@ -34,6 +34,37 @@ export default {
         content:
           "Chaque dimanche après-midi ou presque a lieu dans une maison à Ivry-sur-Seine des interventions et des discussions autour de l'actualité et la philosophie.",
       },
+      {
+        hid: "twitter:image",
+        name: "twitter:image",
+        content: "https://maison-du-savoir.fr/meta.png",
+      },
+      {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: "La maison du savoir",
+      },
+      {
+        hid: "twitter:site",
+        name: "twitter:site",
+        content: "https://maison-du-savoir.fr/",
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content:
+          "Chaque dimanche après-midi ou presque a lieu dans une maison à Ivry-sur-Seine des interventions et des discussions autour de l'actualité et la philosophie.",
+      },
+      {
+        hid: "twitter:card",
+        name: "twitter:card",
+        content: "summary",
+      },
+      {
+        hid: "twitter:site",
+        name: "twitter:site",
+        content: "https://twitter.com/AnnaBmnn",
+      },
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
