@@ -26,7 +26,7 @@ export default {
   position: relative;
   width: calc(100% + 32px);
   transform: translateX(-16px);
-  padding: 3vw 14px calc(15vw) calc(1vw + 14px);
+  padding: 4vw 14px calc(15vw) calc(1vw + 14px);
   min-height: 49vh;
   display: flex;
   box-sizing: border-box;
@@ -41,7 +41,7 @@ export default {
   content: "";
   position: absolute;
   bottom: 0;
-  height: 2px;
+  height: 5px;
   width: calc(100% - 32px);
   left: 16px;
   background-color: black;
@@ -51,6 +51,9 @@ export default {
   .cards {
     padding: 10vw 14px calc(15vw - 20px);
     min-height: 55vh;
+  }
+  .cards:after {
+    height: 3px;
   }
 }
 </style>

@@ -23,22 +23,18 @@
     </div>
     <button
       class="accordeon__btn"
+      :class="showDescription ? 'accordeon__btn accordeon__btn--close' : 'accordeon__btn '"
       @click="showDescriptionFunc"
       v-show="show && theme.data.summary.length > 0"
     >
-      <span v-show="!showDescription" class="accordeon__btn-icon accordeon__btn-icon--open">?</span>
-      <span v-show="showDescription">
-        <img
-          src="~/assets/img/cross.svg"
-          alt="toggle accordeon"
-          width="2rem"
-          height="2rem"
-          :class="
-            showDescription
-              ? 'accordeon__btn-icon accordeon__btn-icon--close'
-              : 'accordeon__btn-icon accordeon__btn-icon--open'
-          " /></span
-      >à propos
+      à propos<span
+        :class="
+          showDescription
+            ? 'accordeon__btn-icon accordeon__btn-icon--close'
+            : 'accordeon__btn-icon accordeon__btn-icon--open'
+        "
+        >→
+      </span>
     </button>
     <p class="accordeon__txt" v-show="show && theme.data.summary.length > 0 && showDescription">
       {{ $prismic.asText(theme.data.summary) }}
@@ -100,27 +96,52 @@ export default {
   font-style: italic;
 }
 .accordeon__btn {
-  margin: 3.2rem 0 0;
+  position: relative;
+  margin: 0.8rem 0 0 1vw;
   text-align: left;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   font-size: 1.3rem;
+  display: inline-block;
+  width: fit-content;
+}
+.accordeon__btn--close:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: black;
 }
 .accordeon__btn-icon--open {
-  /* border-radius: 50%;
-  background-color: black;
-  color: black; */
+  font-size: 1.7rem;
+  transform: translate(-2px, 0px) rotate(0deg);
+
+  display: inline-block;
+}
+.accordeon__btn-icon--close {
+  font-size: 1.7rem;
+  display: inline-block;
 }
 .accordeon__btn-icon {
   width: 1.1rem;
   height: 1.1rem;
   padding-left: 1vw;
 }
-.accordeon__btn-icon--close {
-  transform: rotate(45deg);
-  margin-right: 0.4rem;
+.accordeon__btn:hover:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: black;
 }
-.accordeon__btn:hover {
-  font-style: italic;
+.accordeon__btn:hover .accordeon__btn-icon--open {
+  transform: translate(2px, 0px) rotate(45deg);
+}
+.accordeon__btn-icon--close {
+  transform: translate(2px, 0px) rotate(45deg);
 }
 .accordeon__icon {
   margin: 1.15vw 14px 0;
@@ -142,7 +163,7 @@ export default {
   width: 66%;
   font-size: 1.2rem;
   line-height: 1.4;
-  margin: 1.6rem 0px 9vw;
+  margin: 1rem 1vw 9vw;
 }
 
 .accordeon__item-container:last-of-type .accordeon__item {
@@ -151,6 +172,8 @@ export default {
 .accordeon__item-container:last-of-type
   .is-open.accordeon__item
   + .accordeon__author
+  + .accordeon__btn
+  + .accordeon__txt
   + .cards:after {
   opacity: 1;
 }
